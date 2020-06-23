@@ -3,11 +3,11 @@
 > This project consist on a simple web app where a user check the current weather of a specific location.
 
 ## Desktop
-![screenshot](./todoappmain.gif)
+![screenshot](./#)
 
 ## Mobile
 <p align="center">
-  <img src="./mobile.png">
+  <img src="./#">
 </p>
 
 ## Built With
