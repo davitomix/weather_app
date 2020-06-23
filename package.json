@@ -2,9 +2,14 @@
   "name": "weather_app",
   "version": "1.0.0",
   "description": "> This project consist on a simple web app where a user check the current weather of a specific location.",
-  "main": "index.js",
+  "private": true,
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "webpack --mode development --watch",
+    "build": "webpack --mode development --build",
+    "dev": "webpack --mode development",
+    "prod": "webpack --mode production",
+    "start": "webpack-dev-server --mode development --open"
   },
   "repository": {
     "type": "git",
@@ -18,6 +23,10 @@
   },
   "homepage": "https://github.com/davitomix/weather_app#readme",
   "devDependencies": {
+    "css-loader": "^3.6.0",
+    "sass": "^1.26.9",
+    "sass-loader": "^8.0.2",
+    "style-loader": "^1.2.1",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.12"
   }
