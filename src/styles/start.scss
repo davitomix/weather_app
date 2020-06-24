@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
 
 .start {
-  transition: opacity 800ms;
+  transition: opacity 1.5s;
   display: flex;
   justify-content: center;
   align-items: center;
   min-height: 100vh;
   background: #000;
-  &.hide:hover {
+  &.hide {
     opacity: 0;
   }
 }
