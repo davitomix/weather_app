@@ -29,7 +29,7 @@ body {
 .weather {
   opacity: 0;
   transition: opacity 1.5s;
-  min-height: 50vh;
+  min-height: 90vh;
   min-width: 50vw;
   color: #21ebff;
   &.show {
@@ -38,7 +38,7 @@ body {
   &:before {
     content: '';
     position: absolute;
-    top: 25vh;
+    top: 5vh;
     left: 25vw;
     width: 10px;
     height: 10px;
@@ -50,14 +50,14 @@ body {
   
   &.show:before {
     width: 48%;
-    height: 46%;
+    height: 85%;
     transition-delay: 0s;
   }
 
   &:after {
     content: '';
     position: absolute;
-    bottom: 25vh;
+    bottom: 5vh;
     right: 25vw;
     width: 10px;
     height: 10px;
@@ -69,7 +69,7 @@ body {
   
   &.show:after {
     width: 48%;
-    height: 46%;
+    height: 85%;
     transition-delay: 0s;
   }
 }
