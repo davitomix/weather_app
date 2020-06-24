@@ -82,12 +82,17 @@ body {
 }
 
 .back {
+  opacity: 0;
+  transition: opacity 1500;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 50px;
   height: 20px;
   width: 50px;
+  &.show {
+    opacity: 1;
+  }
   a.menu {
     filter: hue-rotate(0deg);
   }

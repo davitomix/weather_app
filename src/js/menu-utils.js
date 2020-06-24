@@ -3,6 +3,7 @@ const menuUtil = (() => {
   const weatherBox = document.getElementById('weather-box');
   const startBtn = document.getElementById('start-btn');
   const backBox = document.getElementById('back-box');
+  const backBtn = document.getElementById('back-btn');
 
   const start = () => {
     weatherBox.style.display = 'none';
@@ -14,10 +15,14 @@ const menuUtil = (() => {
       menuBox.classList.add('hide');
       setTimeout(() => {
         menuBox.style.display = 'none';
-        weatherBox.style.display = 'block';
-        backBox.style.display = '';
+        weatherBox.style.display = 'flex';
+        backBox.style.display = 'flex';
         setTimeout(() => {
           weatherBox.classList.add('show');
+          backBox.classList.add('show');
+          backBtn.addEventListener('click', (e) => {
+            console.log('djdfkb');
+          }, false, { once: true });
         }, 250);
       }, 1500);
     }, false, { once: true });
