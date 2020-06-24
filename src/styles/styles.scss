@@ -30,7 +30,7 @@ body {
 .weather {
   margin-top: 70px;
   opacity: 0;
-  transition: opacity 500;
+  transition: opacity 0.5s;
   height: 70%;
   width: 60%;
   color: #21ebff;
@@ -83,7 +83,7 @@ body {
 
 .back {
   opacity: 0;
-  transition: opacity 1500;
+  transition: opacity 0.5s;
   display: flex;
   justify-content: center;
   align-items: center;

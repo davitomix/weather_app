@@ -21,7 +21,14 @@ const menuUtil = (() => {
           weatherBox.classList.add('show');
           backBox.classList.add('show');
           backBtn.addEventListener('click', (e) => {
-            console.log('djdfkb');
+            weatherBox.classList.remove('show');
+            backBox.classList.remove('show');
+            setTimeout(() => {
+              weatherBox.style.display = 'none';
+              backBox.style.display = 'none';
+              menuBox.style.display = 'flex';
+              menuBox.classList.remove('hide');
+            }, 500);
           }, false, { once: true });
         }, 250);
       }, 1500);
