@@ -5,14 +5,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
   background: #000;
   &.hide {
     opacity: 0;
   }
 }
 
-a {
+a.menu {
   position: relative;
   padding: 10px 30px;
   margin: 0 15px;
