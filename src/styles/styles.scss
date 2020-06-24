@@ -1,4 +1,5 @@
 @use "sass:string";
+@import './start.scss';
 
 html {
   box-sizing: border-box;
@@ -6,13 +7,68 @@ html {
 }
 
 *, *:before, *:after {
-  box-sizing: inherit;
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
+  font-family: 'Poppins', sans-serif;
 }
 
-
 body {
-  font-family: "Times New Roman", Times, serif;
-  font-size: 1em;
+  background-color: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 100vw;
+  min-height: 100vh;
+}
+
+.d-none {
+  display: none;
+}
+
+.weather {
+  opacity: 0;
+  transition: opacity 2s;
+  min-height: 50vh;
+  min-width: 50vw;
+  &.show {
+    opacity: 1;
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    top: 25vh;
+    left: 25vw;
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid #21ebff;
+    border-left: 2px solid #21ebff;
+    transition: 0.5s;
+    transition-delay: 0.5s;
+  }
+  
+  &.show:before {
+    width: 48%;
+    height: 46%;
+    transition-delay: 0s;
+  }
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 25vh;
+    right: 25vw;
+    width: 10px;
+    height: 10px;
+    border-bottom: 2px solid #21ebff;
+    border-right: 2px solid #21ebff;
+    transition: 0.5s;
+    transition-delay: 0.5s;
+  }
+  
+  &.show:after {
+    width: 48%;
+    height: 46%;
+    transition-delay: 0s;
+  }
 }
