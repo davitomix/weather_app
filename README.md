@@ -1,4 +1,4 @@
-# Todo List App.
+# Weather App.
 
 > This project consist on a simple web app where a user check the current weather of a specific location.
 

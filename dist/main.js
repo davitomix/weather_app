@@ -129,7 +129,19 @@ eval("\n\nvar isOldIE = function isOldIE() {\n  var memo;\n  return function mem
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_styles_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/styles.scss */ \"./src/styles/styles.scss\");\n/* harmony import */ var _styles_styles_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_styles_styles_scss__WEBPACK_IMPORTED_MODULE_0__);\n\n\nconsole.log('Hello webpack!');\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_styles_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/styles.scss */ \"./src/styles/styles.scss\");\n/* harmony import */ var _styles_styles_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_styles_styles_scss__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _js_weather_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./js/weather-utils */ \"./src/js/weather-utils.js\");\n\n\n\nconst dataTransductor = _js_weather_utils__WEBPACK_IMPORTED_MODULE_1__[\"default\"];\nconsole.log('Hello webpack!');\ndataTransductor.hello();\n\n//# sourceURL=webpack:///./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/js/weather-utils.js":
+/*!*********************************!*\
+  !*** ./src/js/weather-utils.js ***!
+  \*********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nconst weatherData = (() => {\n  const hello = () => {\n    console.log('hello weather api');\n  };\n  return {\n    hello\n  };\n})();\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (weatherData);\n\n//# sourceURL=webpack:///./src/js/weather-utils.js?");
 
 /***/ }),
 
