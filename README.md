@@ -46,6 +46,7 @@ Give a ⭐️ if you like this project!
 
 ## Source
 [The Odin Project](https://www.theodinproject.com/courses/javascript/lessons/todo-list)
+Special thanks to [shironitus](https://codepen.io/shironitus) for the design concept and animations.
 
 
 ## 📝 License

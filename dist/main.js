@@ -129,7 +129,19 @@ eval("\n\nvar isOldIE = function isOldIE() {\n  var memo;\n  return function mem
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_styles_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/styles.scss */ \"./src/styles/styles.scss\");\n/* harmony import */ var _styles_styles_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_styles_styles_scss__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _js_weather_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./js/weather-utils */ \"./src/js/weather-utils.js\");\n\n\n\n\nconst dataTransductor = _js_weather_utils__WEBPACK_IMPORTED_MODULE_1__[\"default\"];\nconsole.log('Hello webpack!');\ndataTransductor.hello();\n\n//# sourceURL=webpack:///./src/index.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _styles_styles_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./styles/styles.scss */ \"./src/styles/styles.scss\");\n/* harmony import */ var _styles_styles_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_styles_styles_scss__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _js_weather_utils__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./js/weather-utils */ \"./src/js/weather-utils.js\");\n/* harmony import */ var _js_menu_utils__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./js/menu-utils */ \"./src/js/menu-utils.js\");\n\n\n\nconst menuObj = _js_menu_utils__WEBPACK_IMPORTED_MODULE_2__[\"default\"];\nconst start = (() => {\n  menuObj.start();\n})();\n\n//# sourceURL=webpack:///./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/js/menu-utils.js":
+/*!******************************!*\
+  !*** ./src/js/menu-utils.js ***!
+  \******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nconst menuUtil = (() => {\n  const menuBox = document.getElementById('menu-box');\n  const weatherBox = document.getElementById('weather-box');\n  const startBtn = document.getElementById('start-btn');\n\n  const start = () => {\n    weatherBox.style.display = 'none';\n    setTimeout(() => {\n      menuBox.classList.remove('hide');\n    }, 250);\n    startBtn.addEventListener('click', (e) => {\n      menuBox.classList.add('hide');\n      setTimeout(() => {\n        menuBox.style.display = 'none';\n        weatherBox.style.display = 'block';\n        setTimeout(() => {\n          weatherBox.classList.add('show');\n        }, 250);\n      }, 1500);\n    }, false, { once: true });\n  }\n  return {\n    start\n  };\n})();\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (menuUtil);\n\n//# sourceURL=webpack:///./src/js/menu-utils.js?");
 
 /***/ }),
 

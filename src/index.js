@@ -1,7 +1,7 @@
 import './styles/styles.scss';
 import weatherData from './js/weather-utils';
-
-
-const dataTransductor = weatherData;
-console.log('Hello webpack!');
-dataTransductor.hello();
+import menuUtil from './js/menu-utils';
+const menuObj = menuUtil;
+const start = (() => {
+  menuObj.start();
+})();
