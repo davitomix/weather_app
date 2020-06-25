@@ -1,3 +1,8 @@
 import './styles/styles.scss';
+import weatherData from './js/weather-utils';
+import menuUtil from './js/menu-utils';
 
-console.log('Hello webpack!');
+const menuObj = menuUtil;
+const start = (() => {
+  menuObj.start();
+})();
