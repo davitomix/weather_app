@@ -10,29 +10,34 @@ const menuUtil = (() => {
     backBox.style.display = 'none';
     setTimeout(() => {
       menuBox.classList.remove('hide');
-    }, 250);
-    startBtn.addEventListener('click', (e) => {
-      menuBox.classList.add('hide');
-      setTimeout(() => {
-        menuBox.style.display = 'none';
-        weatherBox.style.display = 'flex';
-        backBox.style.display = 'flex';
-        setTimeout(() => {
-          weatherBox.classList.add('show');
-          backBox.classList.add('show');
-          backBtn.addEventListener('click', (e) => {
-            weatherBox.classList.remove('show');
-            backBox.classList.remove('show');
+      menuBox.addEventListener('transitionend', (e) => {
+        e.preventDefault();
+        startBtn.addEventListener('click', (e) => {
+          e.preventDefault();
+          menuBox.classList.add('hide');
+          setTimeout(() => {
+            menuBox.style.display = 'none';
+            weatherBox.style.display = 'flex';
+            backBox.style.display = 'flex';
             setTimeout(() => {
-              weatherBox.style.display = 'none';
-              backBox.style.display = 'none';
-              menuBox.style.display = 'flex';
-              menuBox.classList.remove('hide');
-            }, 1000);
-          }, false, { once: true });
-        }, 250);
-      }, 1000);
-    }, false, { once: true });
+              weatherBox.classList.add('show');
+              backBox.classList.add('show');
+              backBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                weatherBox.classList.remove('show');
+                backBox.classList.remove('show');
+                setTimeout(() => {
+                  weatherBox.style.display = 'none';
+                  backBox.style.display = 'none';
+                  menuBox.style.display = 'flex';
+                  menuBox.classList.remove('hide');
+                }, 1000);
+              }, false, { once: true });
+            }, 250);
+          }, 1000);
+        }, false, { once: true });
+      });
+    }, 250);
   };
   return {
     start,
