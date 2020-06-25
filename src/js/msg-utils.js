@@ -8,9 +8,9 @@ const Messager = (() => {
   };
 
   const postError = (query, units, error) => {
-    console.log(error);
+    console.log(error.message);
   };
-  
+
   return {
     postWeather,
     postError    
