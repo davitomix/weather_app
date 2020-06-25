@@ -33,9 +33,9 @@ const menuUtil = (() => {
         }, 250);
       }, 1500);
     }, false, { once: true });
-  }
+  };
   return {
-    start
+    start,
   };
 })();
 

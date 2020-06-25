@@ -3,7 +3,7 @@ const weatherData = (() => {
     console.log('hello weather api');
   };
   return {
-    hello
+    hello,
   };
 })();
 
