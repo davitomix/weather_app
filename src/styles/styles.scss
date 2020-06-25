@@ -29,14 +29,14 @@ body {
 
 .weather {
   opacity: 0;
-  transition: opacity 0.5s;
+  transition: opacity 1s;
   height: 81%;
   width: 60%;
   color: #21ebff;
   .weather-data {
     height: 200px;
     width: 100%;
-    background-color: gray;
+    //background-color: gray;
   }
   &.show {
     opacity: 1;
@@ -82,7 +82,7 @@ body {
 
 .back {
   opacity: 0;
-  transition: opacity 0.5s;
+  transition: opacity 1s;
   display: flex;
   justify-content: center;
   align-items: center;

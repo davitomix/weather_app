@@ -28,10 +28,10 @@ const menuUtil = (() => {
               backBox.style.display = 'none';
               menuBox.style.display = 'flex';
               menuBox.classList.remove('hide');
-            }, 500);
+            }, 1000);
           }, false, { once: true });
         }, 250);
-      }, 1500);
+      }, 1000);
     }, false, { once: true });
   };
   return {
