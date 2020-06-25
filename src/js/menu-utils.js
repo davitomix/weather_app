@@ -1,4 +1,4 @@
-const menuUtil = (() => {
+const MenUtil = (() => {
   const menuBox = document.getElementById('menu-box');
   const weatherBox = document.getElementById('weather-box');
   const startBtn = document.getElementById('start-btn');
@@ -44,4 +44,4 @@ const menuUtil = (() => {
   };
 })();
 
-export default menuUtil;
+export default MenUtil;

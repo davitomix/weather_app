@@ -1,8 +1,12 @@
 import './styles/styles.scss';
-import weatherData from './js/weather-utils';
-import menuUtil from './js/menu-utils';
+import WeatherData from './js/weather-utils';
+import MenUtil from './js/menu-utils';
 
-const menuObj = menuUtil;
+const menuObj = MenUtil;
+const wheater = WeatherData;
+
 const start = (() => {
-  menuObj.start();
+  // menuObj.start();
+  wheater.getApiData('London');
+  wheater.getApiData('Lonsdhvfds');
 })();
