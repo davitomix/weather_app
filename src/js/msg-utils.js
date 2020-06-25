@@ -5,10 +5,12 @@ const Messager = (() => {
 
   const postWeather = (query, units, data) => {
     console.log(data);
+    console.log(query);
   };
 
   const postError = (query, units, error) => {
     console.log(error.message);
+    console.log(query);
   };
 
   return {
