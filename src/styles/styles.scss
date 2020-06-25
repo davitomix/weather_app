@@ -1,5 +1,6 @@
 @use "sass:string";
 @import './start.scss';
+@import './nav.scss';
 
 html {
   box-sizing: border-box;
@@ -33,11 +34,6 @@ body {
   height: 81%;
   width: 60%;
   color: #21ebff;
-  .weather-data {
-    height: 200px;
-    width: 100%;
-    //background-color: gray;
-  }
   &.show {
     opacity: 1;
   }

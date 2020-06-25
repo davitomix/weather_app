@@ -6,7 +6,7 @@ const menuObj = MenUtil;
 const wheater = WeatherData;
 
 const start = (() => {
-  // menuObj.start();
+  menuObj.start();
   wheater.getApiData('London');
   wheater.getApiData('Lonsdhvfds');
 })();

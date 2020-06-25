@@ -1,4 +1,7 @@
+import DomObj from "./dom-utils";
+
 const Messager = (() => {
+  const domTransductor = DomObj;
 
   const postWeather = (query, units, data) => {
     console.log(data);
@@ -7,11 +10,7 @@ const Messager = (() => {
   const postError = (query, units, error) => {
     console.log(error);
   };
-
-  const publish = () => {
-    
-  };
-
+  
   return {
     postWeather,
     postError    

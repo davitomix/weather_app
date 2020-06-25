@@ -1,0 +1,122 @@
+.w-nav {
+  position: relative;
+  .search {
+    position: absolute;
+    margin:auto;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 55px;
+    height: 55px;
+    background-color: #21ebff;
+    border-radius: 50%;
+    z-index: 4;
+    box-shadow: 0 0 25px 0 rgba(0, 0, 0, 0.4);
+    transition: 1s all;
+    &:hover {
+      cursor: pointer;
+    }
+    &::before {
+      content: " ";
+      position: absolute;
+      margin: auto;
+      top: 22px;
+      left: 22px;
+      right: 0;
+      bottom: 0;
+      width: 12px;
+      height: 2px;
+      background-color: #fff;
+      transform: rotate(45deg);
+      transition: 0.5s all;
+    }
+    &::after {
+      content: " ";
+      position: absolute;
+      margin: auto;
+      top: -5px;
+      left: -5px;
+      right: 0;
+      bottom: 0;
+      width: 25px;
+      height: 25px;
+      border-radius: 50%;
+      border: 2px solid #fff ;
+      transition: 0.5s all;
+    }
+  }
+  input {
+    position: absolute;
+    margin: auto;
+    top: 0px;
+    left: 0px;
+    right: 0;
+    bottom: 0;
+    width: 300px;
+    height: 50px;
+    outline: none;
+    border: none;
+    background-color: #21ebff;
+    color: #fff;
+    text-shadow: 0 0 10px #21ebff;
+    padding: 0 80px 0 20px;
+    border-radius: 30px;
+    box-shadow: 0 0 25px 0 #21ebff, 0 20px 25px 0 rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    z-index: 5;
+    letter-spacing: 0.1em;
+    transition: 1s all;
+    &:hover {
+      cursor: pointer;
+    }
+    &:focus {
+      width: 300px;
+      opacity: 1;
+      cursor: text;
+    }
+    &:focus ~ .search {
+      right: -250px;
+      background-color: #151515;
+      z-index: 6;
+    }
+    &:focus ~ .search::before {
+      top: 0;
+      left: 0;
+      width: 25px;
+    }
+    &:focus ~ .search::after {
+      top: 0;
+      left: 0;
+      width: 25px;
+      height: 2px;
+      border: none;
+      background-color: #fff;
+      border-radius: 0;
+      transform: rotate(-45deg);
+    }
+    &::placeholder{
+      color: #fff;
+    }
+  }
+}
+
+.w-container {
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 98%;
+  height: 98%;
+  // background-color: gray;
+  .w-nav {
+    width: 98%;
+    height: 10%;
+  }
+  .w-body {
+    width: 98%;
+    height: 88%;
+    background-color: lightgoldenrodyellow;
+  }
+}
