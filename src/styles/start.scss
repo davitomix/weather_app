@@ -18,6 +18,7 @@ a.menu {
   font-size: 20px;
   transition: 0.5s;
   -webkit-box-reflect: below 2px linear-gradient(transparent,#0003);
+  
   &:nth-child(1) {
     filter: hue-rotate(115deg);
   }
