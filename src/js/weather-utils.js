@@ -1,4 +1,4 @@
-import Messager from "./msg-utils";
+import Messager from './msg-utils';
 
 const WeatherData = (() => {
   const OW_URL = 'https://api.openweathermap.org/data/2.5/weather';
@@ -11,14 +11,14 @@ const WeatherData = (() => {
       const resp = await fetch(`${OW_URL}?q=${query}&appid=${APPID}&units=${units}`);
       const weatherData = await resp.json();
       msgTransductor.getSuccess(query, units, weatherData);
-    } catch(error) {
+    } catch (error) {
       msgTransductor.getError(query, units, error);
     }
   };
 
   return {
     getApiData,
-  }
+  };
 })();
 
 export default WeatherData;

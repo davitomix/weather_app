@@ -1,4 +1,4 @@
-import DomObj from "./dom-utils";
+import DomObj from './dom-utils';
 
 const Messager = (() => {
   const domTransductor = DomObj;
@@ -17,8 +17,8 @@ const Messager = (() => {
 
   return {
     getSuccess,
-    getError,  
-  }
+    getError,
+  };
 })();
 
 export default Messager;
