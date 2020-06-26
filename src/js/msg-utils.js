@@ -1,8 +1,5 @@
-import DomObj from './dom-utils';
-
+/* eslint-disable */
 const Messager = (() => {
-  const domTransductor = DomObj;
-
   const getSuccess = (query, units, data) => {
     if (query === data.name) {
       console.log(data.name);
@@ -22,3 +19,4 @@ const Messager = (() => {
 })();
 
 export default Messager;
+/* eslint-enable */

@@ -1,3 +1,4 @@
+/* eslint-disable */
 const DomObj = (() => {
   const injectView = (data) => {
     console.log('Injecting view!');
@@ -9,3 +10,4 @@ const DomObj = (() => {
 })();
 
 export default DomObj;
+/* eslint-enable */
