@@ -1,4 +1,3 @@
-/* eslint-disable */
 const Messager = (() => {
   const getSuccess = (query, units, data) => {
     if (query === data.name) {
@@ -19,4 +18,3 @@ const Messager = (() => {
 })();
 
 export default Messager;
-/* eslint-enable */
