@@ -17,23 +17,24 @@ a.menu {
   letter-spacing: 2px;
   font-size: 20px;
   transition: 0.5s;
-  -webkit-box-reflect: below 2px linear-gradient(transparent,#0003);
+  -webkit-box-reflect: below 2px linear-gradient(transparent, #0003);
+
   &:nth-child(1) {
     filter: hue-rotate(115deg);
   }
-  
+
   &:nth-child(3) {
     filter: hue-rotate(270deg);
   }
-  
+
   &:hover {
     background: #21ebff;
     color: #111;
     box-shadow: 0 0 50px #21ebff;
     transition-delay: 0.5s;
   }
-  
-  &:before {
+
+  &::before {
     content: '';
     position: absolute;
     top: 0;
@@ -45,14 +46,14 @@ a.menu {
     transition: 0.5s;
     transition-delay: 0.5s;
   }
-  
-  &:hover:before {
+
+  &:hover::before {
     width: 98%;
     height: 96%;
     transition-delay: 0s;
   }
-  
-  &:after {
+
+  &::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -64,8 +65,8 @@ a.menu {
     transition: 0.5s;
     transition-delay: 0.5s;
   }
-  
-  &:hover:after {
+
+  &:hover::after {
     width: 98%;
     height: 96%;
     transition-delay: 0s;

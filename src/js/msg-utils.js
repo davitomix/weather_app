@@ -1,8 +1,4 @@
-import DomObj from './dom-utils';
-
 const Messager = (() => {
-  const domTransductor = DomObj;
-
   const getSuccess = (query, units, data) => {
     if (query === data.name) {
       console.log(data.name);
