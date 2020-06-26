@@ -29,8 +29,8 @@ const MenUtil = (() => {
                 setTimeout(() => {
                   weatherContBox.classList.add('show');
                   setTimeout(() => {
-                    backBtn.addEventListener('click', (e) => {
-                      e.preventDefault();
+                    backBtn.addEventListener('click', (a) => {
+                      a.preventDefault();
                       weatherContBox.classList.remove('show');
                       backBox.classList.remove('show');
                       weatherBox.classList.remove('show');

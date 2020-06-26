@@ -17,7 +17,7 @@ const Messager = (() => {
 
   return {
     getSuccess,
-    getError    
+    getError,  
   }
 })();
 
