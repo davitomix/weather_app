@@ -74,7 +74,7 @@ body {
 
 .back {
   opacity: 0;
-  transition: opacity 0.8s;
+  transition: opacity 0.25s;
   display: none;
   justify-content: center;
   align-items: center;
@@ -91,7 +91,7 @@ body {
 
 .w-container {
   opacity: 0;
-  transition: opacity 0.8s;
+  transition: opacity .5s;
   &.show {
     opacity: 1;
   }

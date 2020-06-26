@@ -1,4 +1,4 @@
-const MenUtil = (() => {
+const SysControl = (() => {
   const menuBox = document.getElementById('menu-box');
   const weatherBox = document.getElementById('weather-box');
   const weatherContBox = document.getElementById('w-container-box');
@@ -12,6 +12,14 @@ const MenUtil = (() => {
 
   const undisplayElement = (ele) => {
     ele.style.display = 'none';
+  };
+
+  const showElement = (ele) => {
+    ele.classList.add('show');
+  };
+
+  const hideElemnt = (ele) => {
+    ele.classList.remove('show');
   };
 
   const resolveAfterXms = (time) => {
@@ -33,10 +41,11 @@ const MenUtil = (() => {
     el.addEventListener('transitionend', transitionEnded);
   });
 
-  const start = async () => {
+  const init = async () => {
     await resolveAfterXms(100);
     await transitionToPromise(menuBox, 'opacity', '1');
     startBtn.addEventListener('click', startSeq, false, { once: true });
+    backBtn.addEventListener('click', endSeq, false, { once: true });
   }
 
   const startSeq = async () => {
@@ -45,20 +54,18 @@ const MenUtil = (() => {
     displayElement(weatherBox);
     displayElement(backBox);
     await resolveAfterXms(100);
-    weatherBox.classList.add('show');
-    backBox.classList.add('show');
-    await resolveAfterXms(400);
+    showElement(weatherBox);
+    await transitionToPromise(backBox, 'opacity', '1');
     displayElement(weatherContBox);
     await resolveAfterXms(100);
-    weatherContBox.classList.add('show');
+    showElement(weatherContBox);
     await resolveAfterXms(100);
-    backBtn.addEventListener('click', endSeq, false, { once: true });
   }
 
   const endSeq = async () => {
-    weatherContBox.classList.remove('show');
-    backBox.classList.remove('show');
-    weatherBox.classList.remove('show');
+    await transitionToPromise(backBox, 'opacity', '0');
+    hideElemnt(weatherContBox);
+    hideElemnt(weatherBox);
     await resolveAfterXms(1000);
     undisplayElement(weatherBox);
     undisplayElement(weatherContBox);
@@ -69,8 +76,8 @@ const MenUtil = (() => {
   }
 
   return {
-    start,
+    init,
   };
 })();
 
-export default MenUtil;
+export default SysControl;
