@@ -22,31 +22,21 @@ const SysControl = (() => {
     ele.classList.remove('show');
   };
 
-  const resolveAfterXms = (time) => {
-    return new Promise(resolve => {
-      setTimeout(function() {
-        resolve();
-      }, time);
-    });
-  }
+  const resolveAfterXms = (time) => new Promise(resolve => {
+    setTimeout(() => {
+      resolve();
+    }, time);
+  });
 
-  const transitionToPromise = (el, property, value) =>
-  new Promise(resolve => {
+  const transitionToPromise = (el, property, value) => new Promise(resolve => {
     el.style[property] = value;
     const transitionEnded = e => {
       if (e.propertyName !== property) return;
       el.removeEventListener('transitionend', transitionEnded);
       resolve();
-    }
+    };
     el.addEventListener('transitionend', transitionEnded);
   });
-
-  const init = async () => {
-    await resolveAfterXms(100);
-    await transitionToPromise(menuBox, 'opacity', '1');
-    startBtn.addEventListener('click', startSeq, false, { once: true });
-    backBtn.addEventListener('click', endSeq, false, { once: true });
-  }
 
   const startSeq = async () => {
     await transitionToPromise(menuBox, 'opacity', '0');
@@ -60,7 +50,7 @@ const SysControl = (() => {
     await resolveAfterXms(100);
     showElement(weatherContBox);
     await resolveAfterXms(100);
-  }
+  };
 
   const endSeq = async () => {
     await transitionToPromise(backBox, 'opacity', '0');
@@ -73,7 +63,14 @@ const SysControl = (() => {
     displayElement(menuBox);
     await resolveAfterXms(100);
     await transitionToPromise(menuBox, 'opacity', '1');
-  }
+  };
+
+  const init = async () => {
+    await resolveAfterXms(100);
+    await transitionToPromise(menuBox, 'opacity', '1');
+    startBtn.addEventListener('click', startSeq, false, { once: true });
+    backBtn.addEventListener('click', endSeq, false, { once: true });
+  };
 
   return {
     init,

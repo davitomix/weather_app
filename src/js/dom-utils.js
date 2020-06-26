@@ -5,7 +5,7 @@ const DomObj = (() => {
   };
   return {
     injectView,
-  }
+  };
 })();
 
 export default DomObj;
