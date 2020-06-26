@@ -165,7 +165,7 @@ eval("__webpack_require__.r(__webpack_exports__);\nconst MenUtil = (() => {\n  c
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _dom_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dom-utils */ \"./src/js/dom-utils.js\");\n\n\nconst Messager = (() => {\n  const domTransductor = _dom_utils__WEBPACK_IMPORTED_MODULE_0__[\"default\"];\n\n  const getSuccess = (query, units, data) => {\n    if (query === data.name) {\n      console.log(data.name);\n    } else {\n      console.log('City not found');\n    }\n  };\n\n  const getError = (query, units, error) => {\n    console.log(error);\n  };\n\n  return {\n    getSuccess,\n    getError    \n  }\n})();\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Messager);\n\n//# sourceURL=webpack:///./src/js/msg-utils.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _dom_utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./dom-utils */ \"./src/js/dom-utils.js\");\n\n\nconst Messager = (() => {\n  const domTransductor = _dom_utils__WEBPACK_IMPORTED_MODULE_0__[\"default\"];\n\n  const getSuccess = (query, units, data) => {\n    if (query === data.name) {\n      console.log(data.name);\n    } else {\n      console.log(data.message);\n    }\n  };\n\n  const getError = (query, units, error) => {\n    console.log(error);\n  };\n\n  return {\n    getSuccess,\n    getError    \n  }\n})();\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (Messager);\n\n//# sourceURL=webpack:///./src/js/msg-utils.js?");
 
 /***/ }),
 

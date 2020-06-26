@@ -7,7 +7,7 @@ const Messager = (() => {
     if (query === data.name) {
       console.log(data.name);
     } else {
-      console.log('City not found');
+      console.log(data.message);
     }
   };
 
