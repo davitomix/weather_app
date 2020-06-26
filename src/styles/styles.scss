@@ -25,11 +25,8 @@ body {
   height: 100vh;
 }
 
-.d-none {
-  display: none;
-}
-
 .weather {
+  display: none;
   transition: opacity 1s;
   height: 81%;
   width: 60%;
@@ -78,7 +75,7 @@ body {
 .back {
   opacity: 0;
   transition: opacity 0.8s;
-  display: flex;
+  display: none;
   justify-content: center;
   align-items: center;
   margin-top: 50px;
@@ -99,7 +96,7 @@ body {
     opacity: 1;
   }
   margin: auto;
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
