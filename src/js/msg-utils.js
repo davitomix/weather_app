@@ -3,17 +3,21 @@ import DomObj from "./dom-utils";
 const Messager = (() => {
   const domTransductor = DomObj;
 
-  const postWeather = (query, units, data) => {
-    console.log(data);
+  const getSuccess = (query, units, data) => {
+    if (query === data.name) {
+      console.log(data.name);
+    } else {
+      console.log(data.message);
+    }
   };
 
-  const postError = (query, units, error) => {
-    console.log(error.message);
+  const getError = (query, units, error) => {
+    console.log(error);
   };
 
   return {
-    postWeather,
-    postError    
+    getSuccess,
+    getError,  
   }
 })();
 

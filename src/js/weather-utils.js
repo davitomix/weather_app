@@ -10,9 +10,9 @@ const WeatherData = (() => {
     try {
       const resp = await fetch(`${OW_URL}?q=${query}&appid=${APPID}&units=${units}`);
       const weatherData = await resp.json();
-      msgTransductor.postWeather(query, units, weatherData);
+      msgTransductor.getSuccess(query, units, weatherData);
     } catch(error) {
-      msgTransductor.postError(query, units, error);
+      msgTransductor.getError(query, units, error);
     }
   };
 
