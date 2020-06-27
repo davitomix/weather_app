@@ -196,7 +196,7 @@ body {
   align-items: center;
 
   .box-data {
-    width: 82%;
+    width: 90%;
     height: 85%;
     border: 2px solid #21ebff;
 
@@ -222,29 +222,31 @@ body {
 
     .box-bottom {
       display: flex;
-      justify-content: center;
+      justify-content: space-around;
       align-items: center;
       text-align: center;
 
       div {
         display: flex;
         align-items: center;
+        justify-content: center;
         height: 75px;
-        width: 75px;
+        width: 50%;
         margin: 0 5px;
         
         img {
-          height: 60px;
-          width: 60px;
+          height: 65px;
+          width: 65px;
           background-color: #21ebff;
           border-radius: 50%;
         }
       }
 
       p {
+        width: 50%;
         text-transform: uppercase;
-        font-size: 1.2em;
-        margin-left: 5px;
+        font-size: 1.3em;
+        margin: 0 5px;
       }
     }
   }
@@ -256,7 +258,7 @@ body {
   align-items: center;
 
   .box-data {
-    width: 82%;
+    width: 90%;
     height: 60%;
     border: 2px solid #21ebff;
 
@@ -265,6 +267,32 @@ body {
       width: 100%;
       height: 50%;
       border: 2px solid #fff;
+    }
+
+    .box-top {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+      h4 {
+        width: 100%;
+        text-transform: uppercase;
+        font-size: 1.3em;
+      }
+    }
+
+    .box-bottom {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+
+      span {
+        width: 100%;
+        text-transform: uppercase;
+        font-size: 1em;
+      }
     }
   }
 }
@@ -299,20 +327,34 @@ body {
     width: 90%;
     height: 70%;
     border: 2px solid rgb(191, 27, 27);
-  }
 
-  .box-top,
-  .box-bottom {
-    width: 100%;
-    border: 2px solid #fff;
-  }
+    .box-top,
+    .box-bottom {
+      width: 100%;
+      border: 2px solid #fff;
+    }
 
-  .box-top {
-    height: 30%;
-  }
+    .box-top {
+      height: 30%;
+      text-align: center;
 
-  .box-bottom {
-    height: 60%;
+      span {
+        text-transform: uppercase;
+        font-size: 1.2em;
+      }
+    }
+
+    .box-bottom {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-transform: uppercase;
+      height: 60%;
+      span {
+        padding: 0 5px;
+        font-size: 2.5em;
+      }
+    }
   }
 }
 
