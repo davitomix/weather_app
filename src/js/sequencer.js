@@ -48,8 +48,8 @@ const SequencerObj = (() => {
   };
 
   const sucessViewSequence = async (data) => {
-    await promiser.resolveAfterXms(100);
     dommer.injectSucessView(data);
+    await promiser.resolveAfterXms(100);
     await promiser.resolveAfterTransition(weatherBase, 'opacity', '1');
   };
 
