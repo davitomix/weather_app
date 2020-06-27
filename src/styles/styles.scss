@@ -222,17 +222,19 @@ body {
       display: flex;
       justify-content: center;
       align-items: center;
+      text-align: justify;
 
       img {
-        height: 5rem;
         margin-right: 5px;
         background-color: #21ebff;
         border-radius: 50%;
+        height: 65px;
+        width: 65px;
       }
 
       p {
         text-transform: uppercase;
-        font-size: 1em;
+        font-size: 1.2em;
         margin-left: 5px;
       }
     }
