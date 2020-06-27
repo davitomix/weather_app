@@ -29,22 +29,63 @@
             <div class="box-l-1">
                 <div class="box-data">
                   <div class="box-top">
-                    <h3>14 ℃</h3>
+                    <h3 id="temp-c"></h3>
                   </div>
-                  <div class="box-bottom">
-                    <img src="./svg/wi-showers.svg" alt="cloud">
-                    <p>Moderate Rain</p>
+                  <div class="box-bottom" id="weather-description">
+                    <div>
+                    </div>
+                    <p></p>
                   </div>
                 </div>
             </div>
             <div class="box-l-2">
-              <div class="box-data"></div>
+              <div class="box-data">
+                <div class="box-top">
+                  <h4>
+                    <span id="city-name"></span>
+                    <span id="country-name"></span>
+                  </h4>
+                </div>
+                <div class="box-bottom">
+                  <span id="date-time"></span>
+                </div>
+              </div>
             </div>
           </div>
           <div class="w-box-r">
-            <div class="box-r-1"></div>
-            <div class="box-r-2"></div>
-            <div class="box-r-3"></div>
+            <div class="box-r-1">
+              <div class="box-data">
+                <div class="box-top">
+                  <span>Wind</span>
+                </div>
+                <div class="box-bottom">
+                  <span id="wind"></span>
+                  <span class="unit">m/s</span>
+                </div>
+              </div>
+            </div>
+            <div class="box-r-2">
+              <div class="box-data">
+                <div class="box-top">
+                  <span>Cloud</span>
+                </div>
+                <div class="box-bottom">
+                  <span id="cloud"></span>
+                  <span class="unit">%</span>
+                </div>
+              </div>
+            </div>
+            <div class="box-r-3">
+              <div class="box-data">
+                <div class="box-top">
+                  <span>Humidity</span>
+                </div>
+                <div class="box-bottom">
+                  <span id="humidity"></span>
+                  <span class="unit">%</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
