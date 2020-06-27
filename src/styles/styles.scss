@@ -198,13 +198,13 @@ body {
   .box-data {
     width: 90%;
     height: 85%;
-    border: 2px solid lightgreen;
+    // border: 2px solid lightgreen;
 
     .box-top,
     .box-bottom {
       width: 100%;
       height: 50%;
-      border: 2px solid #fff;
+      // border: 2px solid #fff;
     }
 
     .box-top {
@@ -260,13 +260,13 @@ body {
   .box-data {
     width: 90%;
     height: 60%;
-    border: 2px solid lightgreen;
+    // border: 2px solid lightgreen;
 
     .box-top,
     .box-bottom {
       width: 100%;
       height: 50%;
-      border: 2px solid #fff;
+      // border: 2px solid #fff;
     }
 
     .box-top {
@@ -302,7 +302,7 @@ body {
   .box-l-2 {
     width: 100%;
     height: 50%;
-    border: 2px solid rgb(191, 27, 27);
+    // border: 2px solid rgb(191, 27, 27);
   }
 }
 
@@ -312,7 +312,7 @@ body {
   .box-r-3 {
     width: 100%;
     height: 33.33%;
-    border: 2px solid rgb(191, 27, 27);
+    // border: 2px solid rgb(191, 27, 27);
   }
 }
 
@@ -330,12 +330,12 @@ body {
     align-items: center;
     width: 90%;
     height: 70%;
-    border: 2px solid lightgreen;
+    // border: 2px solid lightgreen;
 
     .box-top,
     .box-bottom {
       width: 100%;
-      border: 2px solid #fff;
+      // border: 2px solid #fff;
     }
 
     .box-top {
@@ -375,7 +375,7 @@ body {
   .w-box-r {
     width: 50%;
     height: 100%;
-    border: 2px solid white;
+    // border: 2px solid lightsteelblue;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
