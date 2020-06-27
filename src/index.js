@@ -4,15 +4,22 @@ import SysControl from './js/sys-utils';
 
 const sys = SysControl;
 const wheater = WeatherData;
-/* eslint-disable */
+const searchInput = document.getElementById('search-input');
+
+const triggerQuery = (evt) => {
+  if (evt.key !== 'Enter') return;
+  wheater.getApiData(searchInput.value);
+  searchInput.value = '';
+  searchInput.blur();
+};
+
 const start = async () => {
-/* eslint-enable */
   await sys.init();
-  setTimeout(() => {
-    wheater.getApiData('Tlalnepantla');
-    console.log('called api');
-  }, 1000);
-  // wheater.getApiData('Lonsdhvfds');
+  searchInput.addEventListener('keyup', triggerQuery);
+  // setTimeout(() => {
+  //   wheater.getApiData('Tlalnepantla');
+  //   console.log('called api');
+  // }, 1000);
 };
 
 start();
