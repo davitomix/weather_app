@@ -5,6 +5,7 @@ const Messager = (() => {
 
   const getSuccess = (query, data) => {
     if (query === data.name) {
+      sequencer.hideAndShowSequence();
       sequencer.sucessViewSequence(data);
     } else {
       sequencer.errorViewSequence(data.message);
