@@ -10,6 +10,7 @@ const SequencerObj = (() => {
   const startBtn = document.getElementById('start-btn');
   const backBox = document.getElementById('back-box');
   const backBtn = document.getElementById('back-btn');
+  const weatherBase = document.querySelector('.weather-base');
 
   const startSeq = async () => {
     await promiser.resolveAfterTransition(menuBox, 'opacity', '0');
@@ -46,8 +47,10 @@ const SequencerObj = (() => {
     backBtn.addEventListener('click', endSeq, false, { once: true });
   };
 
-  const sucessViewSequence = (data) => {
+  const sucessViewSequence = async (data) => {
+    await promiser.resolveAfterXms(100);
     dommer.injectSucessView(data);
+    await promiser.resolveAfterTransition(weatherBase, 'opacity', '1');
   };
 
   const errorViewSequence = (msg) => {
