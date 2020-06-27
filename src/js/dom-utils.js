@@ -11,6 +11,20 @@ const DomObj = (() => {
   const wind = document.getElementById('wind');
   const cloud = document.getElementById('cloud');
   const humidity = document.getElementById('humidity');
+  const spanTitles = document.querySelectorAll('.title');
+  const spanUnits = document.querySelectorAll('.unit');
+
+  const showSpanTitles = () => {
+    Array.prototype.forEach.call(spanTitles, child => {
+      child.classList.remove('title');
+    });
+  };
+
+  const showSpanUnits = () => {
+    Array.prototype.forEach.call(spanUnits, child => {
+      child.classList.remove('unit');
+    });
+  };
 
   const injectSucessView = (data) => {
     temperatureC.innerHTML = `${Math.round(data.main.temp)} &#8451;`;
@@ -22,6 +36,8 @@ const DomObj = (() => {
     wind.innerText = `${Math.round(data.wind.speed)}`;
     cloud.innerText = `${data.clouds.all}`;
     humidity.innerText = `${data.main.humidity}`;
+    showSpanTitles();
+    showSpanUnits();
   };
 
   const injectFailView = (message) => {
