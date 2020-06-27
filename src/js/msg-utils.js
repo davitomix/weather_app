@@ -1,18 +1,17 @@
 import DomObj from './dom-utils';
 
-const domInjector = DomObj;
-
 const Messager = (() => {
+  const domTransductor = DomObj;
   const getSuccess = (query, units, data) => {
     if (query === data.name) {
-      domInjector.injectSucessView(data);
+      domTransductor.injectSucessView(data);
     } else {
-      domInjector.injectFailView(data.message);
+      domTransductor.injectFailView(data.message);
     }
   };
 
   const getError = (query, units, error) => {
-    domInjector.injectErrorView(error);
+    domTransductor.injectErrorView(error);
   };
 
   return {

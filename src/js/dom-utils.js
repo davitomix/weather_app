@@ -14,15 +14,39 @@ const DomObj = (() => {
   const spanTitles = document.querySelectorAll('.title');
   const spanUnits = document.querySelectorAll('.unit');
 
-  const showSpanTitles = () => {
+  const displayElement = (ele) => {
+    ele.style.display = 'flex';
+  };
+
+  const undisplayElement = (ele) => {
+    ele.style.display = 'none';
+  };
+
+  const showElement = (ele) => {
+    ele.classList.add('show');
+  };
+
+  const hideElemnt = (ele) => {
+    ele.classList.remove('show');
+  };
+
+  const showSpanTitles = (selector) => {
     Array.prototype.forEach.call(spanTitles, child => {
-      child.classList.remove('title');
+      if (selector) {
+        child.classList.remove('title');
+      } else {
+        child.classList.add('title');
+      }
     });
   };
 
-  const showSpanUnits = () => {
+  const showSpanUnits = (selector) => {
     Array.prototype.forEach.call(spanUnits, child => {
-      child.classList.remove('unit');
+      if (selector) {
+        child.classList.remove('unit');
+      } else {
+        child.classList.add('unit');
+      }
     });
   };
 
@@ -36,8 +60,22 @@ const DomObj = (() => {
     wind.innerText = `${Math.round(data.wind.speed)}`;
     cloud.innerText = `${data.clouds.all}`;
     humidity.innerText = `${data.main.humidity}`;
-    showSpanTitles();
-    showSpanUnits();
+    showSpanTitles(true);
+    showSpanUnits(true);
+  };
+
+  const removeDisplayedData = () => {
+    temperatureC.innerHTML = null;
+    iconContainer.innerHTML = null;
+    weatherPar.innerText = '';
+    dateTime.innerHTML = null;
+    city.innerText = '';
+    country.innerText = '';
+    wind.innerText = '';
+    cloud.innerText = '';
+    humidity.innerText = '';
+    showSpanTitles(false);
+    showSpanUnits(false);
   };
 
   const injectFailView = (message) => {
@@ -52,6 +90,11 @@ const DomObj = (() => {
     injectSucessView,
     injectFailView,
     injectErrorView,
+    removeDisplayedData,
+    displayElement,
+    undisplayElement,
+    showElement,
+    hideElemnt,
   };
 })();
 

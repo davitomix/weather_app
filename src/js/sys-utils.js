@@ -1,26 +1,13 @@
+import DomObj from './dom-utils';
+
 const SysControl = (() => {
+  const domTransductor = DomObj;
   const menuBox = document.getElementById('menu-box');
   const weatherBox = document.getElementById('weather-box');
   const weatherContBox = document.getElementById('w-container-box');
   const startBtn = document.getElementById('start-btn');
   const backBox = document.getElementById('back-box');
   const backBtn = document.getElementById('back-btn');
-
-  const displayElement = (ele) => {
-    ele.style.display = 'flex';
-  };
-
-  const undisplayElement = (ele) => {
-    ele.style.display = 'none';
-  };
-
-  const showElement = (ele) => {
-    ele.classList.add('show');
-  };
-
-  const hideElemnt = (ele) => {
-    ele.classList.remove('show');
-  };
 
   const resolveAfterXms = (time) => new Promise(resolve => {
     setTimeout(() => {
@@ -40,29 +27,30 @@ const SysControl = (() => {
 
   const startSeq = async () => {
     await transitionToPromise(menuBox, 'opacity', '0');
-    undisplayElement(menuBox);
-    displayElement(weatherBox);
-    displayElement(backBox);
+    domTransductor.undisplayElement(menuBox);
+    domTransductor.displayElement(weatherBox);
+    domTransductor.displayElement(backBox);
     await resolveAfterXms(100);
-    showElement(weatherBox);
+    domTransductor.showElement(weatherBox);
     await transitionToPromise(backBox, 'opacity', '1');
-    displayElement(weatherContBox);
+    domTransductor.displayElement(weatherContBox);
     await resolveAfterXms(100);
-    showElement(weatherContBox);
+    domTransductor.showElement(weatherContBox);
     await resolveAfterXms(100);
   };
 
   const endSeq = async () => {
     await transitionToPromise(backBox, 'opacity', '0');
-    hideElemnt(weatherContBox);
-    hideElemnt(weatherBox);
+    domTransductor.hideElemnt(weatherContBox);
+    domTransductor.hideElemnt(weatherBox);
     await resolveAfterXms(1000);
-    undisplayElement(weatherBox);
-    undisplayElement(weatherContBox);
-    undisplayElement(backBox);
-    displayElement(menuBox);
+    domTransductor.undisplayElement(weatherBox);
+    domTransductor.undisplayElement(weatherContBox);
+    domTransductor.undisplayElement(backBox);
+    domTransductor.displayElement(menuBox);
     await resolveAfterXms(100);
     await transitionToPromise(menuBox, 'opacity', '1');
+    domTransductor.removeDisplayedData();
   };
 
   const init = async () => {
