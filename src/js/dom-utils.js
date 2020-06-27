@@ -64,20 +64,6 @@ const DomObj = (() => {
     showSpanUnits(true);
   };
 
-  const removeDisplayedData = () => {
-    temperatureC.innerHTML = null;
-    iconContainer.innerHTML = null;
-    weatherPar.innerText = '';
-    dateTime.innerHTML = null;
-    city.innerText = '';
-    country.innerText = '';
-    wind.innerText = '';
-    cloud.innerText = '';
-    humidity.innerText = '';
-    showSpanTitles(false);
-    showSpanUnits(false);
-  };
-
   const injectErrorView = (data) => {
     console.log(data);
   };
@@ -85,7 +71,6 @@ const DomObj = (() => {
   return {
     injectSucessView,
     injectErrorView,
-    removeDisplayedData,
     displayElement,
     undisplayElement,
     showElement,

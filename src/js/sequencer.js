@@ -37,7 +37,7 @@ const SequencerObj = (() => {
     dommer.displayElement(menuBox);
     await promiser.resolveAfterXms(100);
     await promiser.resolveAfterTransition(menuBox, 'opacity', '1');
-    dommer.removeDisplayedData();
+    weatherBase.style.opacity = '0';
   };
 
   const initStartSequence = async () => {
@@ -50,6 +50,8 @@ const SequencerObj = (() => {
   const sucessViewSequence = async (data) => {
     dommer.injectSucessView(data);
     await promiser.resolveAfterTransition(weatherBase, 'opacity', '1');
+    await promiser.resolveAfterXms(100);
+    await promiser.resolveAfterTransition(weatherBase, 'opacity', '0');
   };
 
   const errorViewSequence = (msg) => {
