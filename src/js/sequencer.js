@@ -56,15 +56,10 @@ const SequencerObj = (() => {
     dommer.injectErrorView(msg);
   };
 
-  const hideAndShowSequence = () => {
-    console.log('clear data');
-  };
-
   return {
     initStartSequence,
     sucessViewSequence,
     errorViewSequence,
-    hideAndShowSequence,
   };
 })();
 
