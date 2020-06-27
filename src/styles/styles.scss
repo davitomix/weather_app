@@ -196,7 +196,7 @@ body {
   align-items: center;
 
   .box-data {
-    width: 75%;
+    width: 82%;
     height: 85%;
     border: 2px solid #21ebff;
 
@@ -256,9 +256,16 @@ body {
   align-items: center;
 
   .box-data {
-    width: 60%;
+    width: 82%;
     height: 60%;
     border: 2px solid #21ebff;
+
+    .box-top,
+    .box-bottom {
+      width: 100%;
+      height: 50%;
+      border: 2px solid #fff;
+    }
   }
 }
 
@@ -278,6 +285,34 @@ body {
     width: 100%;
     height: 33.33%;
     border: 2px solid rgb(191, 27, 27);
+  }
+}
+
+.box-r-1,
+.box-r-2,
+.box-r-3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .box-data {
+    width: 90%;
+    height: 70%;
+    border: 2px solid rgb(191, 27, 27);
+  }
+
+  .box-top,
+  .box-bottom {
+    width: 100%;
+    border: 2px solid #fff;
+  }
+
+  .box-top {
+    height: 30%;
+  }
+
+  .box-bottom {
+    height: 60%;
   }
 }
 

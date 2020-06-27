@@ -15,11 +15,11 @@ const triggerQuery = (evt) => {
 
 const start = async () => {
   await sys.init();
-  searchInput.addEventListener('keyup', triggerQuery);
-  // setTimeout(() => {
-  //   wheater.getApiData('Tlalnepantla');
-  //   console.log('called api');
-  // }, 1000);
+  // searchInput.addEventListener('keyup', triggerQuery);
+  setTimeout(() => {
+    wheater.getApiData('Tlalnepantla');
+    console.log('called api');
+  }, 1000);
 };
 
 start();
