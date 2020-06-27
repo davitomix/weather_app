@@ -17,8 +17,8 @@ const DomObj = (() => {
     iconContainer.innerHTML = `<img src="./svg/${data.weather[0].icon}.svg" alt="cloud">`;
     weatherPar.innerText = `${data.weather[0].description}`;
     dateTime.innerHTML = format(new Date(), 'h:m a — iiii, dd MMM `yy');
-    city.innerText = `${data.name}`;
-    country.innerText = `${data.sys.country}`;
+    city.innerText = `${data.name},`;
+    country.innerText = ` ${data.sys.country}`;
     wind.innerText = `${Math.round(data.wind.speed)}`;
     cloud.innerText = `${data.clouds.all}`;
     humidity.innerText = `${data.main.humidity}`;
