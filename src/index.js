@@ -1,8 +1,8 @@
 import './styles/styles.scss';
 import WeatherData from './js/weather-utils';
-import SysControl from './js/sys-utils';
+import SequencerObj from './js/sequencer';
 
-const sys = SysControl;
+const sequencer = SequencerObj;
 const wheater = WeatherData;
 const searchInput = document.getElementById('search-input');
 
@@ -16,7 +16,7 @@ const triggerQuery = (evt) => {
 };
 
 const start = async () => {
-  await sys.init();
+  await sequencer.initStartSequence();
   searchInput.addEventListener('keyup', triggerQuery);
   // setTimeout(() => {
   //   wheater.getApiData('Tlalnepantla');
