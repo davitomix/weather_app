@@ -5,9 +5,14 @@ import SysControl from './js/sys-utils';
 const sys = SysControl;
 const wheater = WeatherData;
 /* eslint-disable */
-const start = (() => {
+const start = async () => {
 /* eslint-enable */
-  sys.init();
-  wheater.getApiData('London');
-  wheater.getApiData('Lonsdhvfds');
-})();
+  await sys.init();
+  setTimeout(() => {
+    wheater.getApiData('Tlalnepantla');
+    console.log('called api');
+  }, 1000);
+  // wheater.getApiData('Lonsdhvfds');
+};
+
+start();

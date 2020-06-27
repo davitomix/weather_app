@@ -211,8 +211,10 @@ body {
       display: flex;
       justify-content: center;
       align-items: center;
+      text-align: center;
 
       h3 {
+        width: 100%;
         font-weight: 500;
         font-size: 4em;
       }
@@ -222,14 +224,21 @@ body {
       display: flex;
       justify-content: center;
       align-items: center;
-      text-align: justify;
+      text-align: center;
 
-      img {
-        margin-right: 5px;
-        background-color: #21ebff;
-        border-radius: 50%;
-        height: 65px;
-        width: 65px;
+      div {
+        display: flex;
+        align-items: center;
+        height: 75px;
+        width: 75px;
+        margin: 0 5px;
+        
+        img {
+          height: 60px;
+          width: 60px;
+          background-color: #21ebff;
+          border-radius: 50%;
+        }
       }
 
       p {
