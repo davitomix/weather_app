@@ -1,23 +1,13 @@
 import './styles/styles.scss';
-import WeatherData from './js/weather-utils';
 import SequencerObj from './js/sequencer';
+import ListenerObj from './js/listener';
 
 const sequencer = SequencerObj;
-const wheater = WeatherData;
-const searchInput = document.getElementById('search-input');
-
-const triggerQuery = (evt) => {
-  if (evt.key !== 'Enter') return;
-  let query = searchInput.value.toLowerCase();
-  query = query.charAt(0).toUpperCase() + query.slice(1);
-  wheater.getApiData(query);
-  searchInput.value = '';
-  searchInput.blur();
-};
+const listener = ListenerObj;
 
 const start = async () => {
   await sequencer.initStartSequence();
-  searchInput.addEventListener('keyup', triggerQuery);
+  listener.listen();
   // setTimeout(() => {
   //   wheater.getApiData('Tlalnepantla');
   //   console.log('called api');

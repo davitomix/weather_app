@@ -2,7 +2,7 @@ import DomObj from './dom-utils';
 import PromiserObj from './promiser';
 
 const SequencerObj = (() => {
-  const domTransductor = DomObj;
+  const dommer = DomObj;
   const promiser = PromiserObj;
   const menuBox = document.getElementById('menu-box');
   const weatherBox = document.getElementById('weather-box');
@@ -13,30 +13,30 @@ const SequencerObj = (() => {
 
   const startSeq = async () => {
     await promiser.resolveAfterTransition(menuBox, 'opacity', '0');
-    domTransductor.undisplayElement(menuBox);
-    domTransductor.displayElement(weatherBox);
-    domTransductor.displayElement(backBox);
+    dommer.undisplayElement(menuBox);
+    dommer.displayElement(weatherBox);
+    dommer.displayElement(backBox);
     await promiser.resolveAfterXms(100);
-    domTransductor.showElement(weatherBox);
+    dommer.showElement(weatherBox);
     await promiser.resolveAfterTransition(backBox, 'opacity', '1');
-    domTransductor.displayElement(weatherContBox);
+    dommer.displayElement(weatherContBox);
     await promiser.resolveAfterXms(100);
-    domTransductor.showElement(weatherContBox);
+    dommer.showElement(weatherContBox);
     await promiser.resolveAfterXms(100);
   };
 
   const endSeq = async () => {
     await promiser.resolveAfterTransition(backBox, 'opacity', '0');
-    domTransductor.hideElemnt(weatherContBox);
-    domTransductor.hideElemnt(weatherBox);
+    dommer.hideElemnt(weatherContBox);
+    dommer.hideElemnt(weatherBox);
     await promiser.resolveAfterXms(1000);
-    domTransductor.undisplayElement(weatherBox);
-    domTransductor.undisplayElement(weatherContBox);
-    domTransductor.undisplayElement(backBox);
-    domTransductor.displayElement(menuBox);
+    dommer.undisplayElement(weatherBox);
+    dommer.undisplayElement(weatherContBox);
+    dommer.undisplayElement(backBox);
+    dommer.displayElement(menuBox);
     await promiser.resolveAfterXms(100);
     await promiser.resolveAfterTransition(menuBox, 'opacity', '1');
-    domTransductor.removeDisplayedData();
+    dommer.removeDisplayedData();
   };
 
   const initStartSequence = async () => {
@@ -46,8 +46,18 @@ const SequencerObj = (() => {
     backBtn.addEventListener('click', endSeq, false, { once: true });
   };
 
+  const sucessViewSequence = (data) => {
+    dommer.injectSucessView(data);
+  };
+
+  const errorViewSequence = (msg) => {
+    dommer.injectErrorView(msg);
+  };
+
   return {
     initStartSequence,
+    sucessViewSequence,
+    errorViewSequence,
   };
 })();
 

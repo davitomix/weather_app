@@ -78,17 +78,12 @@ const DomObj = (() => {
     showSpanUnits(false);
   };
 
-  const injectFailView = (message) => {
-    console.log(message);
-  };
-
   const injectErrorView = (data) => {
     console.log(data);
   };
 
   return {
     injectSucessView,
-    injectFailView,
     injectErrorView,
     removeDisplayedData,
     displayElement,
