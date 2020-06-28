@@ -52,8 +52,7 @@ const SequencerObj = (() => {
     await promiser.resolveAfterTransition(weatherBase, 'opacity', '1');
   };
 
-  const searchSequence = async (data) => {
-    console.log(data);
+  const searchSequence = async () => {
     await promiser.resolveAfterTransition(weatherBase, 'opacity', '0');
   };
 
