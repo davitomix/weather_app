@@ -126,6 +126,8 @@ body {
   width: 100%;
   height: 100%;
   display: none;
+  opacity: 0;
+  transition: opacity 0.5s;
   justify-content: center;
   align-items: center;
 
@@ -327,6 +329,10 @@ body {
         text-transform: uppercase;
         font-size: 1.2em;
       }
+
+      span.title {
+        display: none;
+      }
     }
 
     .box-bottom {
@@ -342,6 +348,7 @@ body {
       }
 
       span.unit {
+        display: none;
         font-size: 1.6em;
       }
     }
@@ -368,6 +375,8 @@ body {
 }
 
 .weather-base {
+  opacity: 0;
+  transition: opacity 0.5s;
   display: flex;
   width: 100%;
   height: 100%;

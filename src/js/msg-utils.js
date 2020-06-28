@@ -1,18 +1,18 @@
-import DomObj from './dom-utils';
-
-const domInjector = DomObj;
+import SequencerObj from './sequencer';
 
 const Messager = (() => {
-  const getSuccess = (query, units, data) => {
+  const sequencer = SequencerObj;
+
+  const getSuccess = (query, data) => {
     if (query === data.name) {
-      domInjector.injectSucessView(data);
+      sequencer.sucessViewSequence(data);
     } else {
-      domInjector.injectFailView(data.message);
+      sequencer.errorViewSequence(data.message);
     }
   };
 
-  const getError = (query, units, error) => {
-    domInjector.injectErrorView(error);
+  const getError = (error) => {
+    sequencer.errorViewSequence(error.message);
   };
 
   return {
