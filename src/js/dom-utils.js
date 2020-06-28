@@ -13,6 +13,7 @@ const DomObj = (() => {
   const humidity = document.getElementById('humidity');
   const spanTitles = document.querySelectorAll('.title');
   const spanUnits = document.querySelectorAll('.unit');
+  const errorTxt = document.getElementById('error-txt');
 
   const displayElement = (ele) => {
     ele.style.display = 'flex';
@@ -79,7 +80,7 @@ const DomObj = (() => {
   };
 
   const injectErrorView = (data) => {
-    console.log(data);
+    errorTxt.innerText = data;
   };
 
   return {

@@ -12,7 +12,7 @@ const Messager = (() => {
   };
 
   const getError = (error) => {
-    sequencer.errorViewSequence(error);
+    sequencer.errorViewSequence(error.message);
   };
 
   return {

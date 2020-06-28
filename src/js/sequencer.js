@@ -41,7 +41,11 @@ const SequencerObj = (() => {
     dommer.displayElement(menuBox);
     await promiser.resolveAfterXms(100);
     await promiser.resolveAfterTransition(menuBox, 'opacity', '1');
+    dommer.removeWeatherView();
     weatherBase.style.opacity = '0';
+    errorBase.style.opacity = '0';
+    errorCounter = 0;
+    successCounter = 0;
   };
 
   const initStartSequence = async () => {
@@ -58,9 +62,9 @@ const SequencerObj = (() => {
     if (errorCounter > 0) {
       await promiser.resolveAfterTransition(errorBase, 'opacity', '0');
     }
-    errorBase.style.display = 'none';
     dommer.removeWeatherView();
-    weatherBase.style.display = 'flex';
+    dommer.undisplayElement(errorBase);
+    dommer.displayElement(weatherBase);
     await promiser.resolveAfterXms(100);
     dommer.injectSucessView(data);
     await promiser.resolveAfterTransition(weatherBase, 'opacity', '1');
@@ -72,8 +76,11 @@ const SequencerObj = (() => {
     if (successCounter > 0) {
       await promiser.resolveAfterTransition(weatherBase, 'opacity', '0');
     }
-    errorBase.style.display = 'flex';
-    weatherBase.style.display = 'none';
+    if (errorCounter > 0) {
+      await promiser.resolveAfterTransition(errorBase, 'opacity', '0');
+    }
+    dommer.displayElement(errorBase);
+    dommer.undisplayElement(weatherBase);
     await promiser.resolveAfterXms(100);
     dommer.injectErrorView(msg);
     await promiser.resolveAfterTransition(errorBase, 'opacity', '1');
