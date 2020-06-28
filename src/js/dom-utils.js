@@ -64,12 +64,27 @@ const DomObj = (() => {
     showSpanUnits(true);
   };
 
+  const removeWeatherView = () => {
+    temperatureC.innerHTML = null;
+    iconContainer.innerHTML = null;
+    weatherPar.innerText = null;
+    dateTime.innerHTML = null;
+    city.innerText = null;
+    country.innerText = null;
+    wind.innerText = null;
+    cloud.innerText = null;
+    humidity.innerText = null;
+    showSpanTitles(false);
+    showSpanUnits(false);
+  };
+
   const injectErrorView = (data) => {
     console.log(data);
   };
 
   return {
     injectSucessView,
+    removeWeatherView,
     injectErrorView,
     displayElement,
     undisplayElement,

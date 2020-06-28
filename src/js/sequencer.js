@@ -11,7 +11,10 @@ const SequencerObj = (() => {
   const backBox = document.getElementById('back-box');
   const backBtn = document.getElementById('back-btn');
   const weatherBase = document.querySelector('.weather-base');
-  let counter = 0;
+  const errorBase = document.querySelector('.not-found-base');
+
+  let successCounter = 0;
+  let errorCounter = 0;
 
   const startSeq = async () => {
     await promiser.resolveAfterTransition(menuBox, 'opacity', '0');
@@ -49,16 +52,33 @@ const SequencerObj = (() => {
   };
 
   const sucessViewSequence = async (data) => {
-    if (counter > 0) {
+    if (successCounter > 0) {
       await promiser.resolveAfterTransition(weatherBase, 'opacity', '0');
     }
+    if (errorCounter > 0) {
+      await promiser.resolveAfterTransition(errorBase, 'opacity', '0');
+    }
+    errorBase.style.display = 'none';
+    dommer.removeWeatherView();
+    weatherBase.style.display = 'flex';
+    await promiser.resolveAfterXms(100);
     dommer.injectSucessView(data);
     await promiser.resolveAfterTransition(weatherBase, 'opacity', '1');
-    counter += 1;
+    successCounter += 1;
+    errorCounter = 0;
   };
 
-  const errorViewSequence = (msg) => {
+  const errorViewSequence = async (msg) => {
+    if (successCounter > 0) {
+      await promiser.resolveAfterTransition(weatherBase, 'opacity', '0');
+    }
+    errorBase.style.display = 'flex';
+    weatherBase.style.display = 'none';
+    await promiser.resolveAfterXms(100);
     dommer.injectErrorView(msg);
+    await promiser.resolveAfterTransition(errorBase, 'opacity', '1');
+    errorCounter += 1;
+    successCounter = 0;
   };
 
   return {
