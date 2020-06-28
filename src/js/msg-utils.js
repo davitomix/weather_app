@@ -5,7 +5,10 @@ const Messager = (() => {
 
   const getSuccess = (query, data) => {
     if (query === data.name) {
-      sequencer.sucessViewSequence(data);
+      sequencer.searchSequence(data);
+      setTimeout(() => {
+        sequencer.sucessViewSequence(data);
+      }, 1000);
     } else {
       sequencer.errorViewSequence(data.message);
     }

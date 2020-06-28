@@ -50,7 +50,10 @@ const SequencerObj = (() => {
   const sucessViewSequence = async (data) => {
     dommer.injectSucessView(data);
     await promiser.resolveAfterTransition(weatherBase, 'opacity', '1');
-    await promiser.resolveAfterXms(100);
+  };
+
+  const searchSequence = async (data) => {
+    console.log(data);
     await promiser.resolveAfterTransition(weatherBase, 'opacity', '0');
   };
 
@@ -62,6 +65,7 @@ const SequencerObj = (() => {
     initStartSequence,
     sucessViewSequence,
     errorViewSequence,
+    searchSequence,
   };
 })();
 
