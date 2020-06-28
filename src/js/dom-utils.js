@@ -2,6 +2,7 @@ import { format } from 'date-fns';
 
 const DomObj = (() => {
   const temperatureC = document.getElementById('temp-c');
+  const temperatureF = document.getElementById('temp-f');
   const weatherDesc = document.getElementById('weather-description');
   const iconContainer = weatherDesc.childNodes[1];
   const weatherPar = weatherDesc.childNodes[3];
@@ -53,6 +54,7 @@ const DomObj = (() => {
 
   const injectSucessView = (data) => {
     temperatureC.innerHTML = `${Math.round(data.main.temp)} &#8451;`;
+    temperatureF.innerHTML = `${Math.round((data.main.temp) * 1.8 + 32)}<span>&#8457;</span>`;
     iconContainer.innerHTML = `<img src="./svg/${data.weather[0].icon}.svg" alt="cloud">`;
     weatherPar.innerText = `${data.weather[0].description}`;
     dateTime.innerHTML = format(new Date(), 'h:m a — iiii, dd MMM `yy');
