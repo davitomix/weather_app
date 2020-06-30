@@ -12,6 +12,7 @@ const SequencerObj = (() => {
   const backBtn = document.getElementById('back-btn');
   const weatherBase = document.querySelector('.weather-base');
   const errorBase = document.querySelector('.not-found-base');
+  const errorBox = document.querySelector('.not-found-box');
   const temperatureC = document.getElementById('temp-c');
   const temperatureF = document.getElementById('temp-f');
 
@@ -101,8 +102,11 @@ const SequencerObj = (() => {
   const errorViewSequence = async (msg) => {
     if (successCounter > 0) {
       await promiser.resolveAfterTransition(weatherBase, 'opacity', '0');
+      dommer.hideElemnt(errorBox);
     }
     if (errorCounter > 0) {
+      dommer.hideElemnt(errorBox);
+      await promiser.resolveAfterXms(500);
       await promiser.resolveAfterTransition(errorBase, 'opacity', '0');
     }
     dommer.displayElement(errorBase);
@@ -110,6 +114,7 @@ const SequencerObj = (() => {
     await promiser.resolveAfterXms(100);
     dommer.injectErrorView(msg);
     await promiser.resolveAfterTransition(errorBase, 'opacity', '1');
+    dommer.showElement(errorBox);
     errorCounter += 1;
     successCounter = 0;
   };
