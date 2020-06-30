@@ -12,9 +12,35 @@ const SequencerObj = (() => {
   const backBtn = document.getElementById('back-btn');
   const weatherBase = document.querySelector('.weather-base');
   const errorBase = document.querySelector('.not-found-base');
+  const temperatureC = document.getElementById('temp-c');
+  const temperatureF = document.getElementById('temp-f');
 
   let successCounter = 0;
   let errorCounter = 0;
+
+  const showFTemp = async () => {
+    await promiser.resolveAfterTransition(temperatureC, 'opacity', '0');
+    temperatureC.style.display = 'none';
+    temperatureF.style.display = 'block';
+    await promiser.resolveAfterXms(100);
+    await promiser.resolveAfterTransition(temperatureF, 'opacity', '1');
+  };
+
+  const showCTemp = async () => {
+    await promiser.resolveAfterTransition(temperatureF, 'opacity', '0');
+    temperatureC.style.display = 'block';
+    temperatureF.style.display = 'none';
+    await promiser.resolveAfterXms(100);
+    await promiser.resolveAfterTransition(temperatureC, 'opacity', '1');
+  };
+
+  temperatureC.addEventListener('click', () => {
+    showFTemp();
+  });
+
+  temperatureF.addEventListener('click', () => {
+    showCTemp();
+  });
 
   const startSeq = async () => {
     await promiser.resolveAfterTransition(menuBox, 'opacity', '0');
@@ -92,6 +118,8 @@ const SequencerObj = (() => {
     initStartSequence,
     sucessViewSequence,
     errorViewSequence,
+    showFTemp,
+    showCTemp,
   };
 })();
 

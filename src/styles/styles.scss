@@ -395,4 +395,16 @@ body {
 
 #temp-f {
   display: none;
+  opacity: 0;
 }
+
+#temp-f,
+#temp-c {
+  z-index: 6;
+  transition: opacity 0.5s;
+}
+
+#temp-f:hover,
+#temp-c:hover{
+  cursor: pointer;
+} 
