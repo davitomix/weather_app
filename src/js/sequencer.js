@@ -21,16 +21,16 @@ const SequencerObj = (() => {
 
   const showFTemp = async () => {
     await promiser.resolveAfterTransition(temperatureC, 'opacity', '0');
-    temperatureC.style.display = 'none';
-    temperatureF.style.display = 'block';
+    dommer.undisplayElement(temperatureC);
+    dommer.displayElement(temperatureF);
     await promiser.resolveAfterXms(100);
     await promiser.resolveAfterTransition(temperatureF, 'opacity', '1');
   };
 
   const showCTemp = async () => {
     await promiser.resolveAfterTransition(temperatureF, 'opacity', '0');
-    temperatureC.style.display = 'block';
-    temperatureF.style.display = 'none';
+    dommer.displayElement(temperatureC);
+    dommer.undisplayElement(temperatureF);
     await promiser.resolveAfterXms(100);
     await promiser.resolveAfterTransition(temperatureC, 'opacity', '1');
   };
