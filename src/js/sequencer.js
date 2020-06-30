@@ -12,9 +12,36 @@ const SequencerObj = (() => {
   const backBtn = document.getElementById('back-btn');
   const weatherBase = document.querySelector('.weather-base');
   const errorBase = document.querySelector('.not-found-base');
+  const errorBox = document.querySelector('.not-found-box');
+  const temperatureC = document.getElementById('temp-c');
+  const temperatureF = document.getElementById('temp-f');
 
   let successCounter = 0;
   let errorCounter = 0;
+
+  const showFTemp = async () => {
+    await promiser.resolveAfterTransition(temperatureC, 'opacity', '0');
+    dommer.undisplayElement(temperatureC);
+    dommer.displayElement(temperatureF);
+    await promiser.resolveAfterXms(100);
+    await promiser.resolveAfterTransition(temperatureF, 'opacity', '1');
+  };
+
+  const showCTemp = async () => {
+    await promiser.resolveAfterTransition(temperatureF, 'opacity', '0');
+    dommer.displayElement(temperatureC);
+    dommer.undisplayElement(temperatureF);
+    await promiser.resolveAfterXms(100);
+    await promiser.resolveAfterTransition(temperatureC, 'opacity', '1');
+  };
+
+  temperatureC.addEventListener('click', () => {
+    showFTemp();
+  });
+
+  temperatureF.addEventListener('click', () => {
+    showCTemp();
+  });
 
   const startSeq = async () => {
     await promiser.resolveAfterTransition(menuBox, 'opacity', '0');
@@ -75,8 +102,11 @@ const SequencerObj = (() => {
   const errorViewSequence = async (msg) => {
     if (successCounter > 0) {
       await promiser.resolveAfterTransition(weatherBase, 'opacity', '0');
+      dommer.hideElemnt(errorBox);
     }
     if (errorCounter > 0) {
+      dommer.hideElemnt(errorBox);
+      await promiser.resolveAfterXms(500);
       await promiser.resolveAfterTransition(errorBase, 'opacity', '0');
     }
     dommer.displayElement(errorBase);
@@ -84,6 +114,7 @@ const SequencerObj = (() => {
     await promiser.resolveAfterXms(100);
     dommer.injectErrorView(msg);
     await promiser.resolveAfterTransition(errorBase, 'opacity', '1');
+    dommer.showElement(errorBox);
     errorCounter += 1;
     successCounter = 0;
   };
@@ -92,6 +123,8 @@ const SequencerObj = (() => {
     initStartSequence,
     sucessViewSequence,
     errorViewSequence,
+    showFTemp,
+    showCTemp,
   };
 })();
 
