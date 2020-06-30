@@ -1,6 +1,6 @@
 # Weather App.
 
-> This project consist on a simple web app where a user check the current weather of a specific location.
+> This project consist on a simple web app where a user check the current weather of a specific city.
 
 ## Desktop
 ![screenshot](./#)
@@ -17,7 +17,7 @@
 - CSS
 
 ## Live Demo
-[Live Demo Link :rocket:](#)
+[Live Demo Link :rocket:](https://rawcdn.githack.com/davitomix/weather_app/cbac1bc2a03a9dd689cc37e40654165366381336/dist/index.html)
 
 
 ## Usage
