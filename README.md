@@ -2,12 +2,8 @@
 
 > This project consist on a simple web app where a user check the current weather of a specific city.
 
-## Desktop
-![screenshot](./#)
-
-## Mobile
 <p align="center">
-  <img src="./#">
+  <img src="./weather-main.gif">
 </p>
 
 ## Built With
