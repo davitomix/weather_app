@@ -4,7 +4,8 @@ input[type="checkbox"] {
   appearance: none;
   -webkit-tap-highlight-color: transparent;
   cursor: pointer;
-  &:focus{
+
+  &:focus {
     outline: 0;
   }
 }
@@ -18,9 +19,10 @@ input[type="checkbox"] {
   position: relative;
   margin: 0;
   border: 2px solid #21ebff;
-  background: linear-gradient(180deg, #2D2F39 0%, #1F2027 100%);
-  transition: all .2s ease;
-  &:after {
+  background: linear-gradient(180deg, #2d2f39 0%, #1f2027 100%);
+  transition: all 0.2s ease;
+
+  &::after {
     content: '';
     position: absolute;
     top: 2px;
@@ -29,14 +31,15 @@ input[type="checkbox"] {
     height: 24px;
     border-radius: 50%;
     background: white;
-    box-shadow: 0 1px 2px rgba(44,44,44,.2);
-    transition: all .2s cubic-bezier(.5,.1,.75,1.35);
+    box-shadow: 0 1px 2px rgba(44, 44, 44, 0.2);
+    transition: all 0.2s cubic-bezier(0.5, 0.1, 0.75, 1.35);
   }
+
   &:checked {
     border-color: #21ebff;
-    &:after {
-      transform: translatex(12px);
+
+    &::after {
+      transform: translateX(12px);
     }
   }
 }
-  

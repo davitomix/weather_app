@@ -15,6 +15,8 @@ const SequencerObj = (() => {
   const errorBox = document.querySelector('.not-found-box');
   const temperatureC = document.getElementById('temp-c');
   const temperatureF = document.getElementById('temp-f');
+  const tempToggler = document.getElementById('temp-toggler');
+  tempToggler.checked = false;
 
   let successCounter = 0;
   let errorCounter = 0;
@@ -34,6 +36,14 @@ const SequencerObj = (() => {
     await promiser.resolveAfterXms(100);
     await promiser.resolveAfterTransition(temperatureC, 'opacity', '1');
   };
+
+  tempToggler.addEventListener('change', (e) => {
+    if (e.target.checked) {
+      showFTemp();
+    } else {
+      showCTemp();
+    }
+  });
 
   temperatureC.addEventListener('click', () => {
     showFTemp();
