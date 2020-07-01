@@ -13,7 +13,7 @@
 - CSS
 
 ## Live Demo
-[Live Demo Link :rocket:](https://rawcdn.githack.com/davitomix/weather_app/1584b8d4556134e46fa67d601465feba8506661a/dist/index.html)
+[Live Demo Link :rocket:](https://rawcdn.githack.com/davitomix/weather_app/8611a5967540766705f067798bae2fd14ac1c3d0/dist/index.html)
 
 
 ## Usage
