@@ -2,6 +2,7 @@
 
 @import './start.scss';
 @import './nav.scss';
+@import './temp-toggler.scss';
 @import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap');
 
 html {
@@ -402,6 +403,11 @@ body {
 #temp-c {
   z-index: 6;
   transition: opacity 0.5s;
+
+  span {
+    padding-left: 3px;
+    font-size: 0.5em;
+  }
 }
 
 #temp-f:hover,

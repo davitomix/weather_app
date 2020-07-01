@@ -53,7 +53,7 @@ const DomObj = (() => {
   };
 
   const injectSucessView = (data) => {
-    temperatureC.innerHTML = `${Math.round(data.main.temp)} &#8451;`;
+    temperatureC.innerHTML = `${Math.round(data.main.temp)}<span>&#8451;</span>`;
     temperatureF.innerHTML = `${Math.round((data.main.temp) * 1.8 + 32)}<span>&#8457;</span>`;
     iconContainer.innerHTML = `<img src="./svg/${data.weather[0].icon}.svg" alt="cloud">`;
     weatherPar.innerText = `${data.weather[0].description}`;
