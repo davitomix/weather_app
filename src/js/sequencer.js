@@ -45,14 +45,6 @@ const SequencerObj = (() => {
     }
   });
 
-  temperatureC.addEventListener('click', () => {
-    showFTemp();
-  });
-
-  temperatureF.addEventListener('click', () => {
-    showCTemp();
-  });
-
   const startSeq = async () => {
     await promiser.resolveAfterTransition(menuBox, 'opacity', '0');
     dommer.undisplayElement(menuBox);
