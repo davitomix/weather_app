@@ -1,13 +1,9 @@
 # Weather App.
 
-> This project consist on a simple web app where a user check the current weather of a specific location.
+> This project consist on a simple web app where a user check the current weather of a specific city.
 
-## Desktop
-![screenshot](./#)
-
-## Mobile
 <p align="center">
-  <img src="./#">
+  <img src="./weather-main.gif">
 </p>
 
 ## Built With
@@ -17,7 +13,7 @@
 - CSS
 
 ## Live Demo
-[Live Demo Link :rocket:](#)
+[Live Demo Link :rocket:](https://rawcdn.githack.com/davitomix/weather_app/8611a5967540766705f067798bae2fd14ac1c3d0/dist/index.html)
 
 
 ## Usage
@@ -46,7 +42,7 @@ Give a ⭐️ if you like this project!
 
 ## Source
 [The Odin Project](https://www.theodinproject.com/courses/javascript/lessons/todo-list)
-Special thanks to [shironitus](https://codepen.io/shironitus) for the design concept and animations.
+Special thanks to [shironitus](https://codepen.io/shironitus), [Ali zahid](https://codepen.io/alx_code) for the design concept and animations.
 
 
 ## 📝 License

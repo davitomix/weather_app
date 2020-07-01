@@ -13,7 +13,84 @@
   </div>
 
   <div class="weather" id="weather-box">
-    <div class="weather-data">
+    <div class="w-container" id="w-container-box">
+      <div class="w-nav">
+        <input id="search-input" type="text" name="" placeholder="Enter a City...">
+        <div class="search"></div>
+      </div>
+      <div class="w-body">
+        <div class="not-found-base">
+          <div class="not-found-box">
+            <h3 id="error-txt"></h3>
+          </div>
+        </div>
+        <div class="weather-base">
+          <div class="w-box-l">
+            <div class="box-l-1">
+                <div class="box-data">
+                  <div class="box-top">
+                    <h3 id="temp-c"></h3>
+                    <h3 id="temp-f"></h3>
+                    <input id="temp-toggler" type="checkbox" class="toggle" checked>
+                  </div>
+                  <div class="box-bottom" id="weather-description">
+                    <div>
+                    </div>
+                    <p></p>
+                  </div>
+                </div>
+            </div>
+            <div class="box-l-2">
+              <div class="box-data">
+                <div class="box-top">
+                  <h4>
+                    <span id="city-name"></span>
+                    <span id="country-name"></span>
+                  </h4>
+                </div>
+                <div class="box-bottom">
+                  <span id="date-time"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="w-box-r">
+            <div class="box-r-1">
+              <div class="box-data">
+                <div class="box-top">
+                  <span class="title">Wind</span>
+                </div>
+                <div class="box-bottom">
+                  <span id="wind"></span>
+                  <span class="unit">m/s</span>
+                </div>
+              </div>
+            </div>
+            <div class="box-r-2">
+              <div class="box-data">
+                <div class="box-top">
+                  <span class="title">Cloud</span>
+                </div>
+                <div class="box-bottom">
+                  <span id="cloud"></span>
+                  <span class="unit">%</span>
+                </div>
+              </div>
+            </div>
+            <div class="box-r-3">
+              <div class="box-data">
+                <div class="box-top">
+                  <span class="title">Humidity</span>
+                </div>
+                <div class="box-bottom">
+                  <span id="humidity"></span>
+                  <span class="unit">%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <div class="back" id="back-box">
