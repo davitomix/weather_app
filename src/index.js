@@ -22,10 +22,6 @@ const listen = () => {
 const start = async () => {
   await sequencer.initStartSequence();
   listen();
-  // setTimeout(() => {
-  //   wheater.getApiData('Tlalnepantla');
-  //   console.log('called api');
-  // }, 1000);
 };
 
 
