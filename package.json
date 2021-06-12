@@ -37,6 +37,9 @@
     "webpack-cli": "^3.3.12"
   },
   "dependencies": {
-    "date-fns": "^2.14.0"
+    "date-fns": "^2.14.0",
+    "glob-parent": ">=5.1.2",
+    "postcss": ">=8.2.10",
+    "trim": ">=0.0.3"
   }
 }
